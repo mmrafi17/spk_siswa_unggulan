@@ -10,17 +10,93 @@ class Kriteria_c extends CI_Controller {
         // }
       }
   
-    function index(){
+    public function index(){
         //   $this->render_page('Listkriteria');
         $data['title'] = 'Halaman Kriteria';
         $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $data['query'] = $this->Kriteria_m->get();
         
         $this->load->view('templates/header',$data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar',$data);
-        $this->load->view('kriteria/index');
+        $this->load->view('kriteria/index',$data);
         $this->load->view('templates/footer');
     }
+
+    public function add(){
+        $data['title'] = 'Halaman Tambah Kriteria';
+        $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $data['att'] = ['Benefit', 'Cost'];
+
+        $this->load->view('templates/header',$data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar',$data);
+        $this->load->view('kriteria/add',$data);
+        $this->load->view('templates/footer');
+    }
+    
+    public function create(){
+        $data['title'] = 'Halaman Tambah Kriteria';
+        $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        
+        $this->form_validation->set_rules('nama_kriteria', 'Keterangan Kriteria', 'required');
+        $this->form_validation->set_rules('bobot_kriteria', 'Bobot', 'required');
+        $this->form_validation->set_rules('atribut_kriteria', 'Atribut', 'required');
+
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('templates/header',$data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar',$data);
+            $this->load->view('kriteria/index');
+            $this->load->view('templates/footer');
+        }else{
+            $this->Kriteria_m->create();
+            $this->session->set_flashdata('message','<div class="alert h5 text-success">Sukses Tambah Data!</div>');
+            redirect('kriteria_c');
+        }
+    }
+
+    public function edit($id){
+        $data['title'] = 'Halaman Tambah Kriteria';
+        $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $data['query'] = $this->Kriteria_m->get_detail($id);
+
+        $this->load->view('templates/header',$data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar',$data);
+        $this->load->view('kriteria/edit', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function confirm_edit(){
+        $data['title'] = 'Halaman Edit Kriteria';
+        $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $data['query'] = $this->Kriteria_m->get();
+
+        $this->form_validation->set_rules('id_kriteria', 'Kode Kriteria', 'required');
+        $this->form_validation->set_rules('nama_kriteria', 'Nama Kriteria', 'required');
+        $this->form_validation->set_rules('bobot_kriteria', 'Bobot', 'required');
+        $this->form_validation->set_rules('poin1', 'Poin 1', 'required');
+        $this->form_validation->set_rules('poin2', 'Poin 2', 'required');
+        $this->form_validation->set_rules('poin3', 'Poin 3', 'required');
+        $this->form_validation->set_rules('poin4', 'Poin 4', 'required');
+        $this->form_validation->set_rules('poin5', 'Poin 5', 'required');
+        $this->form_validation->set_rules('atribut_kriteria', 'Atribut', 'required');
+
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('templates/header',$data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar',$data);
+            $this->load->view('kriteria/edit',$data);
+            $this->load->view('templates/footer');
+        }else{
+            $this->Kriteria_m->update();
+            $this->session->set_flashdata('message','<div class="alert h5 text-success">Sukses Edit Data!</div>');
+            redirect('kriteria_c');
+        }
+    }
+
+    
   
     // function listkriteria(){
     //     $datauser=$this->Krite->list();

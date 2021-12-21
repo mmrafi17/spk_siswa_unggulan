@@ -1,7 +1,62 @@
 <?php 
 
 class Kriteria_m extends CI_Model {
-    
+
+    function get(){
+        return $this->db->get('kriteria')->result_array();
+    }
+
+    function get_detail($id){
+        return $this->db->get_where('kriteria', ['id_kriteria' => $id])->row_array();
+    }
+
+    function create(){
+
+        $kode = $this->input->post('id_kriteria');
+        $nama_krit = $this->input->post('nama_kriteria');
+        $bobot = $this->input->post('bobot_kriteria');
+        $poin1 = $this->input->post('poin1');
+        $poin2 = $this->input->post('poin2');
+        $poin3 = $this->input->post('poin3');
+        $poin4 = $this->input->post('poin4');
+        $poin5 = $this->input->post('poin5');
+        $att = $this->input->post('atribut_kriteria');
+      
+        $array = [
+            'id_kriteria' => $kode,
+            'nama_kriteria' => $nama_krit,
+            'bobot' => $bobot,
+            'poin1' => $poin1,
+            'poin2' => $poin2,
+            'poin3' => $poin3,
+            'poin4' => $poin4,
+            'poin5' => $poin5,
+            'atribut' => $att,
+        ];
+
+        $this->db->insert('kriteria', $array);
+    }
+
+    function update(){
+
+        $id = $this->input->post('id_kriteria');
+
+        $array = [
+            'id_kriteria' => $id,
+            'nama_kriteria' => $this->input->post('nama_kriteria'),
+            'bobot' => $this->input->post('bobot_kriteria'),
+            'poin1' => $this->input->post('poin1'),
+            'poin2' => $this->input->post('poin2'),
+            'poin3' => $this->input->post('poin3'),
+            'poin4' => $this->input->post('poin4'),
+            'poin5' => $this->input->post('poin5'),
+            'atribut' => $this->input->post('atribut_kriteria'),
+        ];
+        
+        $this->db->where('id_kriteria', $id);
+        $this->db->update('kriteria', $array);
+    }
+
     // function list(){
     //     return $this->db->get('kriteria')->result();
     // }

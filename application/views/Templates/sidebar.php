@@ -5,10 +5,7 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
-        <div class="sidebar-brand-text mx-3">
-        <h5>SPK Siswa Unggulan</h5>
-
-        </div>
+        <div class="sidebar-brand-text mx-5">SPK Siswa Unggulan</div>
       </a>
 
       <!-- Divider -->
@@ -38,29 +35,42 @@
           <i class="fas fa-fw fa-folder"></i>
           <span>Data Alternatif</span></a>
       </li>
-      <li <?= $this->uri->segment(1) == 'angsuran' || $this->uri->segment(1) == '' ? 'class="nav-item active"' :'class="nav-item"' ?>>
-        <a class="nav-link pt-0" href="<?= base_url('');?>">
+      <!-- <li <?= $this->uri->segment(1) == '' || $this->uri->segment(1) == '' ? 'class="nav-item active"' :'class="nav-item"' ?>>
+        <a class="nav-link pt-0" href="<?= base_url('matriks_c');?>">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Perhitungan</span></a>
-      </li>
+          <span>Nilai Matriks</span></a>
+      </li> -->
+      <!-- <li <?= $this->uri->segment(1) == 'matriks_c' || $this->uri->segment(1) == '' ? 'class="nav-item active"' :'class="nav-item"' ?>>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Matriks</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Matriks</h6>
+            <a class="collapse-item" href="<?= base_url('matriks_c');?>">Nilai Matriks</a>
+            <a class="collapse-item" href="cards.html">Nilai Matriks Ternormalisasi</a>
+          </div>
+        </div>
+      </li>  -->
       
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Other
+        Lainnya
       </div>
 
 
-      <li <?= $this->uri->segment(1) == '' || $this->uri->segment(1) == '' ? 'class="nav-item active"' :'class="nav-item"' ?>>
+      <li <?= $this->uri->segment(1) == 'matriks_c' || $this->uri->segment(1) == '' ? 'class="nav-item active"' :'class="nav-item"' ?>>
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         <i class="fas fa-envelope-open-text"></i>
-          <span>Transaksi</span>
+          <span>Matriks</span>
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headin gTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= base_url('');?>">Simpan</a>
-            <a class="collapse-item" href="<?= base_url('');?>">Ambil</a>
-            <a class="collapse-item" href="<?= base_url('');?>">Pinjam</a>
-            <a class="collapse-item" href="<?= base_url('');?>">SHU</a>
+            <a class="collapse-item" href="<?= base_url('matriks_c');?>">Nilai Matriks</a>
+            <a class="collapse-item" href="<?= base_url('matriks_c/normalisasi');?>">Matriks Ternormalisasi</a>
+            <a class="collapse-item" href="<?= base_url('');?>">Matriks Preference</a>
+            <a class="collapse-item" href="<?= base_url('');?>">Matriks Lainnya</a>
           </div>
         </div>
       </li>
