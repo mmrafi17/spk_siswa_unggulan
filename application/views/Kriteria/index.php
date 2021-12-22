@@ -1,5 +1,6 @@
     <div class="card ml-4">
     <div class="card-body">
+    <?= $this->session->flashdata('message'); ?>
         <h1 class="card-title">Kriteria</h1>
         <p class="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <table class="table table-sm table-bordered font-weight-normal">

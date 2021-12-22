@@ -5,7 +5,7 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
-        <div class="sidebar-brand-text mx-5">SPK Siswa Unggulan</div>
+        <div class="sidebar-brand-text ">SPK Siswa Unggulan</div>
       </a>
 
       <!-- Divider -->
@@ -56,7 +56,7 @@
       
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Lainnya
+        Hasil Topsis
       </div>
 
 
@@ -69,8 +69,16 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?= base_url('matriks_c');?>">Nilai Matriks</a>
             <a class="collapse-item" href="<?= base_url('matriks_c/normalisasi');?>">Matriks Ternormalisasi</a>
-            <a class="collapse-item" href="<?= base_url('');?>">Matriks Preference</a>
-            <a class="collapse-item" href="<?= base_url('');?>">Matriks Lainnya</a>
+            <a class="collapse-item" href="<?= base_url('matriks_c/bobot_normalisasi');?>">Nilai Bobot Ternormalisasi</a>
+            <a class="collapse-item" href="<?= base_url('matriks_c/ideal_positif_negatif');?>">Ideal Positif/Negatif</a>
+            <a class="collapse-item" href="<?= base_url('');?>">Jarak Solusi Ideal</a>
+            <a class="collapse-item" href="<?= base_url('');?>">Nilai Preferensi</a>
+            <!-- Nilai Matriks -->
+            <!-- Matriks Ternormalisasi -->
+            <!-- Nilai Bobot Ternormalisasi -->
+            <!-- Matriks Ideal Positif/Negatif -->
+            <!-- Jarak Solusi ideal Positif/Negatif -->
+            <!-- Matriks Preferensi -->
           </div>
         </div>
       </li>

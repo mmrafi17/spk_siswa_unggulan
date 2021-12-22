@@ -38,7 +38,7 @@ class Alternatif_c extends CI_Controller {
         $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
         $data['query'] = $this->Alternatif_m->read();
         
-        $this->form_validation->set_rules('kode_alternatif', 'Kode Alternatif', 'required');
+        $this->form_validation->set_rules('id_alternatif', 'Kode Alternatif', 'required');
         $this->form_validation->set_rules('nama_alternatif', 'Nama Alternatif', 'required');
 
         if ($this->form_validation->run() == FALSE){
@@ -71,7 +71,7 @@ class Alternatif_c extends CI_Controller {
         $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
         $data['query'] = $this->Alternatif_m->read();
 
-        $this->form_validation->set_rules('kode_alternatif', 'Kode Alternatif', 'required');
+        $this->form_validation->set_rules('id_alternatif', 'Kode Alternatif', 'required');
         $this->form_validation->set_rules('nama_alternatif', 'Nama Alternatif', 'required');
          
         if ($this->form_validation->run() == FALSE){

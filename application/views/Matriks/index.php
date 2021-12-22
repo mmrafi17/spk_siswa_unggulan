@@ -25,7 +25,7 @@
         <tbody>
           <?php foreach ($alternatif as $key => $value): ?>
             <tr>
-              <td><?= $no++; ?></td>
+              <td class="text-center"><?= $no++; ?></td>
               <td><?= $value['nama_alternatif']; ?></td>
               <?php 
                 $id_alternatif = $value['id_alternatif'];

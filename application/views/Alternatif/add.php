@@ -1,6 +1,6 @@
 <?php 
-    $this->db->select_max('id_kriteria', 'kode');
-    $query = $this->db->get('kriteria')->row_array();
+    $this->db->select_max('id_alternatif', 'kode');
+    $query = $this->db->get('alternatif')->row_array();
     $kode = $query['kode'];
 
     //membuat kode unik 

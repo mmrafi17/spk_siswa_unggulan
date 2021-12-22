@@ -5,7 +5,7 @@ class Alternatif_m extends CI_Model {
 
     function create(){
         $array = [
-            'kode_alternatif' => $this->input->post('kode_alternatif'),
+            'id_alternatif' => $this->input->post('id_alternatif'),
             'nama_alternatif' => $this->input->post('nama_alternatif')
         ];
 
@@ -22,7 +22,7 @@ class Alternatif_m extends CI_Model {
 
     function update(){
         $data = [
-            'kode_alternatif' => $this->input->post('kode_alternatif'),
+            'id_alternatif' => $this->input->post('id_alternatif'),
             'nama_alternatif' => $this->input->post('nama_alternatif')
         ];
     
