@@ -71,8 +71,8 @@
             <a class="collapse-item" href="<?= base_url('matriks_c/normalisasi');?>">Matriks Ternormalisasi</a>
             <a class="collapse-item" href="<?= base_url('matriks_c/bobot_normalisasi');?>">Nilai Bobot Ternormalisasi</a>
             <a class="collapse-item" href="<?= base_url('matriks_c/ideal_positif_negatif');?>">Ideal Positif/Negatif</a>
-            <a class="collapse-item" href="<?= base_url('');?>">Jarak Solusi Ideal</a>
-            <a class="collapse-item" href="<?= base_url('');?>">Nilai Preferensi</a>
+            <a class="collapse-item" href="<?= base_url('matriks_c/jarak_solusi_ideal');?>">Jarak Solusi Ideal</a>
+            <a class="collapse-item" href="<?= base_url('matriks_c/nilai_preferensi');?>">Nilai Preferensi</a>
             <!-- Nilai Matriks -->
             <!-- Matriks Ternormalisasi -->
             <!-- Nilai Bobot Ternormalisasi -->

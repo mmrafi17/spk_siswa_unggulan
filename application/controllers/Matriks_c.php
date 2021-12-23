@@ -121,4 +121,41 @@ class Matriks_c extends CI_Controller {
         $this->load->view('matriks/ideal_positif_negatif',$data);
         $this->load->view('templates/footer');
     }
+
+    public function jarak_solusi_ideal(){
+        
+        $data['title'] = 'Halaman Jarak Solusi Ideal';
+        $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+
+        $data['query'] = $this->Matriks_m->get_join()->result_array();
+        $data['alternatif'] = $this->Matriks_m->get_alternatif()->result_array();
+        $data['kriteria'] = $this->Matriks_m->get_kriteria()->result_array();
+        $data['matriks'] = $this->Matriks_m->get_nilai_matriks()->result_array();
+        // $data['query'] = $this->perhitungan_m->get_detail();
+
+        $this->load->view('templates/header',$data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar',$data);
+        $this->load->view('matriks/jarak_solusi_ideal',$data);
+        $this->load->view('templates/footer');
+    }
+
+    public function nilai_preferensi(){
+        
+        $data['title'] = 'Halaman Jarak Solusi Ideal';
+        $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+
+        $data['query'] = $this->Matriks_m->get_join()->result_array();
+        $data['alternatif'] = $this->Matriks_m->get_alternatif()->result_array();
+        $data['kriteria'] = $this->Matriks_m->get_kriteria()->result_array();
+        $data['matriks'] = $this->Matriks_m->get_nilai_matriks()->result_array();
+        // $data['query'] = $this->perhitungan_m->get_detail();
+
+        $this->load->view('templates/header',$data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar',$data);
+        $this->load->view('matriks/nilai_preferensi',$data);
+        $this->load->view('templates/footer');
+    }
+    
 }
